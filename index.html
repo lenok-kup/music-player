@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main class="main">
+        <div class="player">
+            <h1 class="player__title">playing now</h1>
+            <div class="audio">
+                <p class="audio__logo"></p>
+                <p class="audio__name"></p>
+                <p class="audio__singer"></p>
+                <audio class="audio__track"></audio>
+                <div class="audio-bar">
+                    <div class="audio-bar__current-time"></div>
+                    <div class="audio-bar__progress"></div>
+                    <div class="audio-bar__duration"></div>
+                </div>
+                <div class="audio__btns">
+                    <button class="audio__btn btn--prev">
+                        <svg class="audio__btn__img" width="100%" height="100%" viewBox="0 0 48 48" fill="none">
+                            <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M28.9682 15.5438L39.257 8.52571C41.2485 7.16707 43.9486 8.59383 43.9486 11.0038V36.9158C43.9486 39.3272 41.249 40.7548 39.257 39.3958L20.2635 26.4382C18.5169 25.2492 18.5171 22.6726 20.2631 21.4817L26.9682 16.908V11.0064C26.9682 10.2023 26.0683 9.7271 25.4042 10.1802L6.43638 23.134C5.85532 23.5311 5.85532 24.3887 6.43618 24.7866L25.4038 37.7403C26.0683 38.1936 26.9682 37.7185 26.9682 36.9144V35.9744C26.9682 35.4221 27.4159 34.9744 27.9682 34.9744C28.5205 34.9744 28.9682 35.4221 28.9682 35.9744V36.9144C28.9682 39.3259 26.2685 40.7513 24.2762 39.3922L5.30706 26.4374C3.56509 25.2441 3.56509 22.6737 5.30824 21.4826L24.2766 8.52831C26.2685 7.16942 28.9682 8.59489 28.9682 11.0064V15.5438ZM26.9682 19.329V23.0024C26.9682 23.5547 27.4159 24.0024 27.9682 24.0024C28.5205 24.0024 28.9682 23.5547 28.9682 23.0024V17.9648L40.3841 10.1779C41.048 9.72496 41.9486 10.2009 41.9486 11.0038V36.9158C41.9486 37.7205 41.0482 38.1967 40.3842 37.7437L21.3892 24.785C20.8083 24.3898 20.8083 23.5308 21.3901 23.1339L26.9682 19.329Z"
+                                fill="#fff" />
+                        </svg>
+                    </button>
+                    <button class="audio__btn btn--play">
+                        <svg class="audio__btn__img audio__btn__img--play" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 384 512">
+                            <path
+                                d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                        </svg>
+                        <svg class="audio__btn__img audio__btn__img--pause hidden" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512">
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z" />
+                        </svg>
+                    </button>
+                    <button class="audio__btn btn--next">
+                        <svg class="audio__btn__img" width="100%" height="100%" viewBox="0 0 48 48" fill="none">
+                            <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M28.9682 15.5438L39.257 8.52571C41.2485 7.16707 43.9486 8.59383 43.9486 11.0038V36.9158C43.9486 39.3272 41.249 40.7548 39.257 39.3958L20.2635 26.4382C18.5169 25.2492 18.5171 22.6726 20.2631 21.4817L26.9682 16.908V11.0064C26.9682 10.2023 26.0683 9.7271 25.4042 10.1802L6.43638 23.134C5.85532 23.5311 5.85532 24.3887 6.43618 24.7866L25.4038 37.7403C26.0683 38.1936 26.9682 37.7185 26.9682 36.9144V35.9744C26.9682 35.4221 27.4159 34.9744 27.9682 34.9744C28.5205 34.9744 28.9682 35.4221 28.9682 35.9744V36.9144C28.9682 39.3259 26.2685 40.7513 24.2762 39.3922L5.30706 26.4374C3.56509 25.2441 3.56509 22.6737 5.30824 21.4826L24.2766 8.52831C26.2685 7.16942 28.9682 8.59489 28.9682 11.0064V15.5438ZM26.9682 19.329V23.0024C26.9682 23.5547 27.4159 24.0024 27.9682 24.0024C28.5205 24.0024 28.9682 23.5547 28.9682 23.0024V17.9648L40.3841 10.1779C41.048 9.72496 41.9486 10.2009 41.9486 11.0038V36.9158C41.9486 37.7205 41.0482 38.1967 40.3842 37.7437L21.3892 24.785C20.8083 24.3898 20.8083 23.5308 21.3901 23.1339L26.9682 19.329Z"
+                                fill="#fff" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="audio__volume">
+                    <label class="audio__volume__label" for="volume-range"><img class="audio__volume__img"
+                            src="volume-low.svg" alt="icon volume"></label>
+                    <input class="audio__volume__range" type="range" name="volume" id="volume-range" min="0" max="1"
+                        step="0.01" value="0.5">
+                </div>
+            </div>
+            <div class="player__footer">
+                <a class="player__footer__link school--link" href="https://rs.school/js-stage0/" target="_blank"><img
+                        class="player__footer__link" src="rs_school_js.svg" alt="rs school"></a>
+                <p class="player__footer__year">2023</p>
+                <a class="player__footer__link" href="https://github.com/lenok-kup" target="_blank">Olena Kupina</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
